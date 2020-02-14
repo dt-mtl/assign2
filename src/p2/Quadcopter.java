@@ -39,6 +39,8 @@ public class Quadcopter extends Helicopter{
         this.maxFSpeed = maxFSpeed;
     }
     //methods
+
+    //toString method
     public String toString() {
         return "This Quadcopter is made by" +
                 " '" + brand + '\'' +

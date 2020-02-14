@@ -1,6 +1,8 @@
 package p4;
 import p1.*;
 
+import java.util.Objects;
+
 public class UAV extends Airplane {
 
     //given attributes
@@ -25,7 +27,7 @@ public class UAV extends Airplane {
         brand=copy.getBrand();
         price=copy.getPrice();
         horsepower=copy.getHorsepower();
-        weight=copy.weight;
+        weight=copy.getWeight();
     }
 
     //accessor
@@ -47,12 +49,25 @@ public class UAV extends Airplane {
         this.weight = weight;
     }
     //methods
+//equals method
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UAV)) return false;
+        if (o==null||(getClass()!=o.getClass())) return false;
+        UAV uav = (UAV) o;
+        return Double.compare(uav.weight, weight) == 0 &&
+                Double.compare(uav.price, price) == 0&&
+                uav.horsepower==horsepower&&
+                brand.equals(uav.brand);
+    }
 
 
+    //to string method
     public String toString() {
-        return "This Unmanned Aerial Vehicle is manifactured by " +brand+
+        return "This Unmanned Aerial Vehicle is manufactured by " +brand+
                 ". It weights " + weight +
                 ", and costs " + price +
-                "$. it can carry";
+                "$. it can produce up to "+ horsepower+" Horsepower" ;
     }
 }
