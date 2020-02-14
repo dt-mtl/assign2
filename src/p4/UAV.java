@@ -4,7 +4,8 @@ import p1.*;
 import java.util.Objects;
 
 public class UAV extends Airplane {
-
+//TODO does the UAV class Extend airplanes or is it a class of its own with just three extensions and no brand?
+//in the assingment it indicates a brand for the UAV...
     //given attributes
     protected double weight;
     protected double price;
@@ -54,7 +55,7 @@ public class UAV extends Airplane {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof UAV)) return false;
-        if (o==null||(getClass()!=o.getClass())) return false;
+        if (o==null||(getClass()!=o.getClass())) return false; //FIXME gotta double check this null pattern
         UAV uav = (UAV) o;
         return Double.compare(uav.weight, weight) == 0 &&
                 Double.compare(uav.price, price) == 0&&

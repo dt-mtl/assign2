@@ -52,7 +52,7 @@ public class Agriculturaldrone extends UAV {
     public boolean equals(Object o){
         if(this==o)return true;
         if(!(o instanceof Agriculturaldrone))return false;
-        if(o==null||(getClass()!=o.getClass())) return false;
+        if(o==null||(getClass()!=o.getClass())) return false; //FIXME gotta double check this null pattern as it always returns false!
         Agriculturaldrone drone= (Agriculturaldrone) o;
 
         return Double.compare(drone.weight, weight) == 0 &&
