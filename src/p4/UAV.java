@@ -3,9 +3,8 @@ import p1.*;
 
 import java.util.Objects;
 
-public class UAV extends Airplane {
-//TODO does the UAV class Extend airplanes or is it a class of its own with just three extensions and no brand?
-//in the assingment it indicates a brand for the UAV...
+public class UAV{
+
     //given attributes
     protected double weight;
     protected double price;
@@ -14,21 +13,19 @@ public class UAV extends Airplane {
 
     //default constructor
     public UAV(){
-        super();
+        price=500.55;
         weight=5.00;
     }
 
     //parameter constructor
-    public UAV(String mark,double cost, int hp,double load){
-        super(mark,cost,hp);
+    public UAV(double cost,double load){
+        price=cost;
         weight=load;
     }
     //copy constructor
     public UAV(UAV copy){
-        brand=copy.getBrand();
-        price=copy.getPrice();
-        horsepower=copy.getHorsepower();
-        weight=copy.getWeight();
+        this.price=copy.getPrice();
+        this.weight=copy.getWeight();
     }
 
     //accessor
@@ -58,17 +55,13 @@ public class UAV extends Airplane {
         if (o==null||(getClass()!=o.getClass())) return false; //FIXME gotta double check this null pattern
         UAV uav = (UAV) o;
         return Double.compare(uav.weight, weight) == 0 &&
-                Double.compare(uav.price, price) == 0&&
-                uav.horsepower==horsepower&&
-                brand.equals(uav.brand);
+                Double.compare(uav.price, price) ==0;
     }
 
 
     //to string method
     public String toString() {
-        return "This Unmanned Aerial Vehicle is manufactured by " +brand+
-                ". It weights " + weight +
-                ", and costs " + price +
-                "$. it can produce up to "+ horsepower+" Horsepower" ;
+        return "This Unmanned Aerial Vehicle weighs " + weight +
+                ", and costs " + price + "$. " ;
     }
 }

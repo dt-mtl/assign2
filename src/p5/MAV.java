@@ -7,8 +7,8 @@ public class MAV extends UAV {
 
     //given attributes
 
-    protected String model; // model of the MAV
-    protected double size; // size of the MAV
+    private String model; // model of the MAV
+    private double size; // size of the MAV
 
     //constructors
     //default constructor
@@ -19,16 +19,15 @@ public class MAV extends UAV {
     }
 
     //parameter constructor
-    public MAV(String mark,double cost, int hp,double load, String model,double size){
-        super(mark,cost,hp,load);
+    public MAV(double cost,double load, String model,double size){
+        super(cost,load);
         this.model=model;
         this.size=size;
     }
     //copy constructor
     public MAV(MAV copy){
-        brand=copy.getBrand();
+
         price=copy.getPrice();
-        horsepower=copy.getHorsepower();
         weight=copy.getWeight();
         model=copy.getModel();
         size=copy.getSize();
@@ -56,11 +55,9 @@ public class MAV extends UAV {
     //methods
     //to string method
     public String toString() {
-        return "This MAV is manufactured by " +brand+
-                ". It weights " + weight +
+        return "This MAV weighs " + weight +
                 ", and costs " + price +
-                "$. it can produce up to "+ horsepower+" Horsepower"+
-                "/nThe model of this MAV is "+model+
+                "$ The model of this MAV is "+model+
                 " , it is "+size+" CM in size";
     }
     //equals
@@ -72,8 +69,6 @@ public class MAV extends UAV {
         MAV mav = (MAV) o;
         return Double.compare(mav.size, size) == 0 &&
                 model.equals(mav.model)&&
-                mav.horsepower==horsepower&&
-                brand.equals(mav.brand)&&
                 Double.compare(mav.price,price)==0&&
                 Double.compare(mav.weight,weight)==0;
     }

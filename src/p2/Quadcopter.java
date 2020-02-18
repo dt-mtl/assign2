@@ -3,7 +3,7 @@ package p2;
 public class Quadcopter extends Helicopter{
 
     //given attributes
-    protected int maxFSpeed;  //max flying speed
+    private int maxFSpeed;  //max flying speed
 
     //constructors
 

@@ -5,7 +5,7 @@ import p2.*;
 public class Multirotor extends Helicopter {
 
     //given attributes
-    protected int rotors; //number of rotors
+    private int rotors; //number of rotors
 
     //constructors
 

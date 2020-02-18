@@ -5,7 +5,7 @@ import p4.*;
 public class Agriculturaldrone extends UAV {
 
     //given attributes
-    protected int capacity; // carrying capacity of the drone
+    private int capacity; // carrying capacity of the drone
 
     //constructors
     //default constructor
@@ -15,15 +15,13 @@ public class Agriculturaldrone extends UAV {
     }
 
     //parameter constructor
-    public Agriculturaldrone(String mark,double cost, int hp,double load,int cap){
-        super(mark,cost,hp,load);
+    public Agriculturaldrone(double cost,double load,int cap){
+        super(cost,load);
         capacity=cap;
     }
     //copy constructor
     public Agriculturaldrone(Agriculturaldrone copy){
-        brand=copy.getBrand();
         price=copy.getPrice();
-        horsepower=copy.getHorsepower();
         weight=copy.getWeight();
         capacity=copy.getCapacity();
     }
@@ -41,25 +39,19 @@ public class Agriculturaldrone extends UAV {
     //methods
     //to string method
     public String toString() {
-        return "This Agricultural Drone is manufactured by " +brand+
-                ". It weights " + weight +
+        return "This Agricultural Drone weighs " + weight +
                 ", and costs " + price +
-                "$. it can produce up to "+ horsepower+" Horsepower"+
-                "/nit has a carry capacity of "+capacity;
+                "$. It has a carry capacity of "+capacity;
     }
 
     //equals
     public boolean equals(Object o){
         if(this==o)return true;
-        if(!(o instanceof Agriculturaldrone))return false;
-        if(o==null||(getClass()!=o.getClass())) return false; //FIXME gotta double check this null pattern as it always returns false!
+        if(o==null||(getClass()!=o.getClass())) return false;
         Agriculturaldrone drone= (Agriculturaldrone) o;
 
         return Double.compare(drone.weight, weight) == 0 &&
                 Double.compare(drone.price, price) == 0 &&
-                drone.capacity==capacity&&
-                drone.horsepower==horsepower&&
-                brand.equals(drone.brand);
-
+                drone.capacity==capacity;
     }
 }

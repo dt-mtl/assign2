@@ -13,9 +13,9 @@ public class assing2 {
         Helicopter heli = new Helicopter("boeing", 2500.00,3,2000,13,24);
         Quadcopter quad= new Quadcopter("Airbus",350.00,6500,2,2015,0,250);
         Multirotor multi= new Multirotor("Lockheed",340.50,55500,34,2007,10,9);
-        UAV little= new UAV("DJI",450.25,7,5.61);
-        Agriculturaldrone butter  = new Agriculturaldrone("Sandisk", 432.60, 5,20.45,1);
-        MAV snitch= new MAV("Arduino",334.56,8,4.32,"SNITCH",8.54);
+        UAV little= new UAV(350.76,7.56);
+        Agriculturaldrone butter  = new Agriculturaldrone(450.62,12.63,3);
+        MAV snitch= new MAV(450.23,.52,"DJI",13.52);
         Airplane plane=new Airplane("Fokker",32500.52,400000);
 
 
@@ -26,5 +26,22 @@ public class assing2 {
                             "\n\nThe Agricultural drone is rotor is : "+butter+
                             "\n\nThe MAV rotor is : "+snitch+
                             "\n\nThe Airplane is: "+plane);
+
+        Object[] aviation = new Object[20];
+
+        aviation[0]=  new MAV(450.23,.52,"DJI",13.52);
+        aviation[1]= new Helicopter("boeing", 2500.00,3,2000,13,24);
+        aviation[2]= new Helicopter("boeing", 2500.00,3,2000,13,24);
+        aviation[3]= aviation[2];
+        aviation[4]= new Helicopter("boeing", 2500.50,3,2000,13,24);
+
+        MAV coke= (MAV)aviation[0];
+        System.out.println("the mav: "+aviation[0]);
+        System.out.println("the heli: "+aviation[1]+"\n\n");
+        System.out.println("is object 1 equal to object 3? :"+aviation[0].getClass().);
+
+
+
+
     }
 }
