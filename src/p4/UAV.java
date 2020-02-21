@@ -3,7 +3,26 @@ import p1.*;
 
 import java.util.Objects;
 
-public class UAV{
+public class UAV implements FlyingObject {
+
+
+    public double getCost(Object p){
+        UAV temp= (UAV) p;
+         return temp.getPrice();
+    }
+    double cheap;
+    public double cheapest(Object p,int count) {
+        UAV temp= (UAV)p;
+        if(count==0){
+            cheap=temp.getPrice();
+        }
+        if(count != 0 && cheap > temp.getPrice()){
+            cheap= temp.getPrice();
+        }
+        return cheap; //TODO careful when count is located at 0 in an the array
+    }
+
+
 
     //given attributes
     protected double weight;
